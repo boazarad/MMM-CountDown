@@ -1,9 +1,9 @@
 {
   "name": "MMM-CountDown",
   "version": "1.0.0",
-  "description": "Todo: Insert description here!",
+  "description": "Count down to a specific event",
   "main": "MMM-CountDown.js",
-  "author": "",
+  "author": "Boaz Arad",
   "license": "MIT",
   "devDependencies": {
     "grunt": "latest",
