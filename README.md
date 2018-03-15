@@ -1,8 +1,8 @@
 # MMM-CountDown
 
-This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/).
+This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) which can count down the days to a date/event.
 
-Todo: Insert description here!
+I've never written anything for Node.js before, so hopefully this isn't a total mess, if it is - feel free to lend a hand :)
 
 ## Using the module
 
