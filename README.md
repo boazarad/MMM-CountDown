@@ -13,7 +13,8 @@ var config = {
         {
             module: 'MMM-CountDown',
             config: {
-                // See below for configurable options
+                event: "New Millenium",
+                date: "3000-01-01"
             }
         }
     ]
@@ -24,5 +25,7 @@ var config = {
 
 | Option           | Description
 |----------------- |-----------
-| `option1`        | *Required* DESCRIPTION HERE
-| `option2`        | *Optional* DESCRIPTION HERE TOO <br><br>**Type:** `int`(milliseconds) <br>Default 60000 milliseconds (1 minute)
+| `event`        | *Required* Name of event to count down to (displayed above counter)
+| `date`        | *Required* Date to count down to (YYYY-MM-DD)
+
+If either of the above are missing, the module will count down to the New Millenium (3000-01-01)
