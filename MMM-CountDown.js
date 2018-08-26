@@ -6,6 +6,14 @@ Module.register("MMM-CountDown",{
 		
 	},
 
+	// Set translations
+	getTranslations: function() {
+		return {
+				en: "translations/en.json",
+				nl: "translations/nl.json"
+		}
+	},
+
 	// set update interval
 	start: function() {
 		var self = this;
@@ -29,18 +37,16 @@ Module.register("MMM-CountDown",{
 		textWrapper.innerHTML=this.config.event;
 		
 		var today = new Date(Date.now());
-		//var target = new Date("2018-09-31");
 		var target = new Date(this.config.date);
 		var timeDiff = target.getTime() - today.getTime();
 		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 		
 		timeWrapper.innerHTML = diffDays;
-		unitWrapper.innerHTML = " days";
+		unitWrapper.innerHTML = " " + this.translate("DAYS");
 				
 		wrapper.appendChild(textWrapper);
 		timeWrapper.appendChild(unitWrapper);
 		wrapper.appendChild(timeWrapper);
-		//wrapper.innerHTML =  diffDays;*/
 		
 		return wrapper;
 	}
