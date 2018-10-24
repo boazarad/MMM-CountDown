@@ -10,7 +10,8 @@ Module.register("MMM-CountDown",{
 	getTranslations: function() {
 		return {
 				en: "translations/en.json",
-				nl: "translations/nl.json"
+				nl: "translations/nl.json",
+				sv: "translations/sv.json"
 		}
 	},
 
