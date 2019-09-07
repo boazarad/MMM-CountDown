@@ -39,7 +39,7 @@ Module.register("MMM-CountDown",{
 		// Set days, hours, minutes and seconds
 		var diffDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 		var diffHours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var diffMinutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+		var diffMinutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 		var diffSeconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 		
 		// Build the output
