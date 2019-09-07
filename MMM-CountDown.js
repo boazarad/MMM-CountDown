@@ -10,16 +10,7 @@ Module.register("MMM-CountDown",{
 		daysLabel: 'd',
 		hoursLabel: 'h',
 		minutesLabel: 'm',
-		secondsLabel: 's',		
-	},
-
-	// Set translations
-	getTranslations: function() {
-		return {
-				en: "translations/en.json",
-				nl: "translations/nl.json",
-				sv: "translations/sv.json"
-		}
+		secondsLabel: 's',
 	},
 
 	// set update interval
