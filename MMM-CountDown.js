@@ -11,6 +11,7 @@ Module.register("MMM-CountDown",{
 		hoursLabel: 'h',
 		minutesLabel: 'm',
 		secondsLabel: 's',
+		autoHide: false,
 	},
 
 	// set update interval
@@ -18,7 +19,7 @@ Module.register("MMM-CountDown",{
 		var self = this;
 		setInterval(function() {
 			self.updateDom(); // no speed defined, so it updates instantly.
-		}, this.config.customInterval); 
+		}, this.config.customInterval);
 	},
 
 	// Update function
@@ -35,6 +36,11 @@ Module.register("MMM-CountDown",{
 		var today = new Date(Date.now());
 		var target = new Date(this.config.date);
 		var timeDiff = target - today;
+
+		// don't show the module if the event is in the past
+		if (this.config.autoHide === true && timeDiff < 0) {
+			this.hide();
+		}
 
 		// Set days, hours, minutes and seconds
 		var diffDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
