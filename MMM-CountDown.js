@@ -48,20 +48,25 @@ Module.register("MMM-CountDown",{
 		var days = '';
 		
 		days = '<span id="days">' + diffDays + '</span>' + this.configDaysLabel;
-		listWrapper.append(days);
+		var daysNode = document.createTextNode(days);
+		listWrapper.appendChild(days);
+		
 		if(this.config.showHours == true) {
 			hrs = '<span id="days">' + diffHours + '</span>'  + this.config.hoursLabel;
-			listWrapper.append(hrs);
+			var hrsNode = document.createTextNode(hrs);
+			listWrapper.appendChild(hrs);
 		}
 		
 		if(this.config.showMinutes == true) {
 			mins = '<span id="days">' + diffMinutes + '</span>' + this.config.minutesLabel;
-			listWrapper.append(mins);
+			var hrsNode = document.createTextNode(mins);
+			listWrapper.appendChild(mins);
 		}
 		
 		if(this.config.showSeconds == true) {
 			secs = '<span id="days">' + diffSeconds + '</span>' + this.config.secondsLabel;
-			listWrapper.append(secs);
+			var hrsNode = document.createTextNode(secs);
+			listWrapper.appendChild(secs);
 		}
 		
 		wrapper.appendChild(header);
