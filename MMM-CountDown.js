@@ -65,7 +65,7 @@ Module.register("MMM-CountDown",{
 		listWrapper.innerHTML = days + hrs + mins + secs;
 		
 		wrapper.appendChild(header);
-		wrapper.appendchild(listWrapper);
+		wrapper.appendChild(listWrapper);
 		
 		return wrapper;
 	}
