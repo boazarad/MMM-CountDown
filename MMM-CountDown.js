@@ -24,7 +24,7 @@ Module.register("MMM-CountDown",{
 	// Update function
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		wrapper.id = "countDownTimer"
+		wrapper.className = "countDownTimer"
 		
 		var header = document.createElement("h1");
 		header.innerHTML=this.config.event;
