@@ -47,30 +47,24 @@ Module.register("MMM-CountDown",{
 		var secs = '';
 		var days = '';
 		
-		days = '<span id="days">' + diffDays + '</span>' + this.configDaysLabel;
-		var daysNode = document.createTextNode(days);
-		listWrapper.appendChild(days);
+		days = '<li><span id="days">' + diffDays + '</span>' + this.configDaysLabel + '</li>';
 		
 		if(this.config.showHours == true) {
-			hrs = '<span id="days">' + diffHours + '</span>'  + this.config.hoursLabel;
-			var hrsNode = document.createTextNode(hrs);
-			listWrapper.appendChild(hrs);
+			hrs = '<span id="days">' + diffHours + '</span>'  + this.config.hoursLabel + '</li>';
 		}
 		
 		if(this.config.showMinutes == true) {
-			mins = '<span id="days">' + diffMinutes + '</span>' + this.config.minutesLabel;
-			var hrsNode = document.createTextNode(mins);
-			listWrapper.appendChild(mins);
+			mins = '<span id="days">' + diffMinutes + '</span>' + this.config.minutesLabel + '</li>';
 		}
 		
 		if(this.config.showSeconds == true) {
-			secs = '<span id="days">' + diffSeconds + '</span>' + this.config.secondsLabel;
-			var hrsNode = document.createTextNode(secs);
-			listWrapper.appendChild(secs);
+			secs = '<span id="days">' + diffSeconds + '</span>' + this.config.secondsLabel + '</li>';
 		}
 		
 		wrapper.appendChild(header);
-		wrapper.appendChild(listWrapper);
+		
+		listWrapper.innerHTML = days + hrs + mins + secs;
+		wrapper.appendchild(listWrapper);
 		
 		return wrapper;
 	}
