@@ -10,9 +10,7 @@
  */
 
 .countDownTimer {
-  color: #333;
   margin: 0 auto;
-  padding: 0.5rem;
   text-align: center;
 }
 
@@ -24,17 +22,19 @@
 
 h1 {
   font-weight: normal;
+  font-size:40px;
 }
 
 li {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 20px;
   list-style-type: none;
-  padding: 1em;
+  padding: 1em 1em 0 1em;
   text-transform: uppercase;
+  background-color: rgba(255,255,255,.2);
 }
 
 li span {
   display: block;
-  font-size: 4.5rem;
+  font-size: 70px;
 }
