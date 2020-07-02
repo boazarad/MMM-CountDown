@@ -7,10 +7,10 @@ Module.register("MMM-CountDown",{
 		showMinutes: true,
 		showSeconds: true,
 		customInterval: 1000,
-		daysLabel: 'd',
-		hoursLabel: 'h',
-		minutesLabel: 'm',
-		secondsLabel: 's',
+		daysLabel: 'Days',
+		hoursLabel: 'Hours',
+		minutesLabel: 'Minutes',
+		secondsLabel: 'Seconds',
 	},
 
 	// set update interval
@@ -20,18 +20,21 @@ Module.register("MMM-CountDown",{
 			self.updateDom(); // no speed defined, so it updates instantly.
 		}, this.config.customInterval); 
 	},
+	
+	getStyles: function () {
+		return ["MMM-CountDown.css"];
+	},
 
 	// Update function
 	getDom: function() {
 		var wrapper = document.createElement("div");
-
-		var timeWrapper = document.createElement("div");
-		var textWrapper = document.createElement("div");
-
-		textWrapper.className = "align-left week dimmed medium";
-		timeWrapper.className = "time bright xlarge light";
-		textWrapper.innerHTML=this.config.event;
-
+		wrapper.className = "countDownTimer"
+		
+		var header = document.createElement("h1");
+		header.innerHTML=this.config.event;
+		
+		var listWrapper = document.createElement("ul");
+		
 		var today = new Date(Date.now());
 		var target = new Date(this.config.date);
 		var timeDiff = target - today;
@@ -46,17 +49,28 @@ Module.register("MMM-CountDown",{
 		var hrs = '';
 		var mins = '';
 		var secs = '';
-		var days = diffDays + this.config.daysLabel;
-
-		if(this.config.showHours == true) hrs = diffHours + this.config.hoursLabel;
-		if(this.config.showMinutes == true) mins = diffMinutes + this.config.minutesLabel;
-		if(this.config.showSeconds == true) secs = diffSeconds + this.config.secondsLabel;
-
-		timeWrapper.innerHTML = days + hrs + mins + secs;
-
-		wrapper.appendChild(textWrapper);
-		wrapper.appendChild(timeWrapper);
-
+		var days = '';
+		
+		days = '<li><span id="days">' + diffDays + '</span>' + this.config.daysLabel + '</li>';
+		
+		if(this.config.showHours == true) {
+			hrs = '<li><span id="days">' + diffHours + '</span>'  + this.config.hoursLabel + '</li>';
+		}
+		
+		if(this.config.showMinutes == true) {
+			mins = '<li><span id="days">' + diffMinutes + '</span>' + this.config.minutesLabel + '</li>';
+		}
+		
+		if(this.config.showSeconds == true) {
+			secs = '<li><span id="days">' + diffSeconds + '</span>' + this.config.secondsLabel + '</li>';
+		}
+		
+		
+		listWrapper.innerHTML = days + hrs + mins + secs;
+		
+		wrapper.appendChild(header);
+		wrapper.appendChild(listWrapper);
+		
 		return wrapper;
 	}
 });

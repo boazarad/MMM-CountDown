@@ -8,3 +8,34 @@
  * Custom here your css module
  *
  */
+
+.countDownTimer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: normal;
+  font-size:40px;
+}
+
+li {
+  display: inline-block;
+  font-size: 20px;
+  list-style-type: none;
+  padding: 1em 1em 0 1em;
+  margin: 2px;
+  text-transform: uppercase;
+  background-color: rgba(255,255,255,.2);
+}
+
+li span {
+  display: block;
+  font-size: 70px;
+}
