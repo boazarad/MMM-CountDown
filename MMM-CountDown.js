@@ -7,10 +7,10 @@ Module.register("MMM-CountDown",{
 		showMinutes: true,
 		showSeconds: true,
 		customInterval: 1000,
-		daysLabel: 'd',
-		hoursLabel: 'h',
-		minutesLabel: 'm',
-		secondsLabel: 's',
+		daysLabel: 'Days',
+		hoursLabel: 'Hours',
+		minutesLabel: 'Minutes',
+		secondsLabel: 'Seconds',
 	},
 
 	// set update interval
@@ -24,14 +24,13 @@ Module.register("MMM-CountDown",{
 	// Update function
 	getDom: function() {
 		var wrapper = document.createElement("div");
-
-		var timeWrapper = document.createElement("div");
-		var textWrapper = document.createElement("div");
-
-		textWrapper.className = "align-left week dimmed medium";
-		timeWrapper.className = "time bright xlarge light";
-		textWrapper.innerHTML=this.config.event;
-
+		wrapper.id = "countDownTimer"
+		
+		var header = document.createElement("h1");
+		header.innerHTML=this.config.event;
+		
+		var listWrapper = document.createElement("ul");
+		
 		var today = new Date(Date.now());
 		var target = new Date(this.config.date);
 		var timeDiff = target - today;
@@ -46,17 +45,21 @@ Module.register("MMM-CountDown",{
 		var hrs = '';
 		var mins = '';
 		var secs = '';
-		var days = diffDays + this.config.daysLabel;
+		var days = '';
+		
+		days = '<span id="days">' + diffDays + '</span>' + this.configDaysLabel;
+		if(this.config.showHours == true) hrs = '<span id="days">' + diffHours + '</span>'  + this.config.hoursLabel;
+		if(this.config.showMinutes == true) mins = '<span id="days">' + diffMinutes + '</span>' + this.config.minutesLabel;
+		if(this.config.showSeconds == true) secs = '<span id="days">' + diffSeconds + '</span>' + this.config.secondsLabel;
+		
+		listWrapper.appendChild(days);
+		listWrapper.appendChild(hrs);
+		listWrapper.appendChild(mins);
+		listWrapper.appendChild(secs);
 
-		if(this.config.showHours == true) hrs = diffHours + this.config.hoursLabel;
-		if(this.config.showMinutes == true) mins = diffMinutes + this.config.minutesLabel;
-		if(this.config.showSeconds == true) secs = diffSeconds + this.config.secondsLabel;
-
-		timeWrapper.innerHTML = days + hrs + mins + secs;
-
-		wrapper.appendChild(textWrapper);
-		wrapper.appendChild(timeWrapper);
-
+		wrapper.appendChild(header);
+		wrapper.appendChild(listWrapper);
+		
 		return wrapper;
 	}
 });
