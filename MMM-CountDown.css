@@ -30,6 +30,7 @@ li {
   font-size: 20px;
   list-style-type: none;
   padding: 1em 1em 0 1em;
+  margin: 2px;
   text-transform: uppercase;
   background-color: rgba(255,255,255,.2);
 }
