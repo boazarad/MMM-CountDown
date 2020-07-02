@@ -9,24 +9,24 @@
  *
  */
 
-#countDownTimer {
+.countDownTimer {
   color: #333;
   margin: 0 auto;
   padding: 0.5rem;
   text-align: center;
 }
 
-#countDownTimer.* {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-#countDownTimer.h1 {
+h1 {
   font-weight: normal;
 }
 
-#countDownTimer.li {
+li {
   display: inline-block;
   font-size: 1.5em;
   list-style-type: none;
@@ -34,7 +34,7 @@
   text-transform: uppercase;
 }
 
-#countDownTimer.li span {
+li span {
   display: block;
   font-size: 4.5rem;
 }
