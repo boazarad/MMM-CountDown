@@ -20,6 +20,10 @@ Module.register("MMM-CountDown",{
 			self.updateDom(); // no speed defined, so it updates instantly.
 		}, this.config.customInterval); 
 	},
+	
+	getStyles: function () {
+		return ["MMM-CountDown.css"];
+	},
 
 	// Update function
 	getDom: function() {
