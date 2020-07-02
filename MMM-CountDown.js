@@ -47,7 +47,7 @@ Module.register("MMM-CountDown",{
 		var secs = '';
 		var days = '';
 		
-		days = '<li><span id="days">' + diffDays + '</span>' + this.configDaysLabel + '</li>';
+		days = '<li><span id="days">' + diffDays + '</span>' + this.config.daysLabel + '</li>';
 		
 		if(this.config.showHours == true) {
 			hrs = '<li><span id="days">' + diffHours + '</span>'  + this.config.hoursLabel + '</li>';
